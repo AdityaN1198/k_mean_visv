@@ -53,7 +53,7 @@ st.markdown(
 )
 
 st.markdown(
-    'Lets say We have data of a class where we store weight and height of the students. Now as we know kids come in all'
+    'Lets say We have data of a class where we store weight and height of the students. Now as we know kids come in all '
     'shape and sizes. Lets have a look at this data. ')
 
 class_data = create_class_date()
@@ -62,7 +62,7 @@ st.write(class_data)
 
 st.markdown('')
 st.markdown(
-    'But we do not have any priori categorization of these kids. If we manually go through the data then'
+    'But we do not have any priori categorization of these kids. If we manually go through the data then '
     'we can classify them on the basis of what we want. We can classify them as athletic or not athleitc, or good for '
     'basketball or not good for basketball, or any other category we want to assign them. But for 100 records or million records'
     ' we might not have resources or time to categorize them all. So we can let machine learning algorithm see what kind '
@@ -228,8 +228,8 @@ st.markdown(
     'Since we have better center points now lets group our points based on these new centers'
 )
 
-red_pt = []
-green_pt = []
+red_pt = [[],[]]
+green_pt = [[],[]]
 
 pl = st.empty()
 for i in range(100):
@@ -245,7 +245,8 @@ for i in range(100):
 
         plt.xlabel('Weight')
         plt.ylabel('Height')
-        red_pt.append(curr_point.tolist())
+        red_pt[0].append(curr_point.tolist()[0])
+        red_pt[1].append(curr_point.tolist()[1])
 
 
     else:
@@ -254,6 +255,8 @@ for i in range(100):
         plt.xlabel('Weight')
         plt.ylabel('Height')
         green_pt.append(curr_point)
+        green_pt[0].append(curr_point.tolist()[0])
+        green_pt[1].append(curr_point.tolist()[1])
 
     pl.pyplot(fig)
 
